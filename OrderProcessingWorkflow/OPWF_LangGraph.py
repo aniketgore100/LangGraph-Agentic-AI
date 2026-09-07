@@ -107,6 +107,10 @@ graph.add_conditional_edges(
         "INVALID" : END
     }
 )
+
+# gpt_key = vnsdaifnvdksfvisdfvnmsdkfnvaewi5n645t6n34b34534
+
+
 graph.add_conditional_edges(
     "check_product",
     route_after_product_check,
@@ -121,4 +125,3 @@ graph.add_edge("check_inventory", END)
 app = graph.compile()
 
 
-# gpt_key = vnsdaifnvdksfvisdfvnmsdkfnvaewi5n645t6n34b34534
