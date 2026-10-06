@@ -5,8 +5,6 @@ from langgraph.graph import StateGraph, START, END
 from database import get_connection
 
 
-# gpt_key = vnsdaifnvdksfvisdfvnmsdkfnvaewi5n645t6n34b34534
-
 class OrderState(TypedDict):
     order_id: int
     product_id: int
@@ -109,6 +107,10 @@ graph.add_conditional_edges(
         "INVALID" : END
     }
 )
+
+# gpt_key = vnsdaifnvdksfvisdfvnmsdkfnvaewi5n645t6n34b34534
+
+
 graph.add_conditional_edges(
     "check_product",
     route_after_product_check,
@@ -121,3 +123,5 @@ graph.add_conditional_edges(
 graph.add_edge("check_inventory", END)
 
 app = graph.compile()
+
+
